@@ -11,7 +11,7 @@ import SwiftUI
 struct iOSMapApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(
+            MapView(
                 store: .init(
                     initialState: .init(),
                     reducer: MapCore()

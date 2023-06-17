@@ -1,9 +1,8 @@
-
 import SwiftUI
 import MapKit
 import ComposableArchitecture
 
-struct ContentView: View {
+struct MapView: View {
     let store: StoreOf<MapCore>
     @ObservedObject var viewStore: ViewStore<MapCore.State, MapCore.Action>
     

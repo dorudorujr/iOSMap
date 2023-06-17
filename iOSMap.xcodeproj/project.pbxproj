@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		15C7EAA62A3D78B30061D064 /* iOSMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAA52A3D78B30061D064 /* iOSMapApp.swift */; };
-		15C7EAA82A3D78B30061D064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAA72A3D78B30061D064 /* ContentView.swift */; };
 		15C7EAAA2A3D78B30061D064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C7EAA92A3D78B30061D064 /* Assets.xcassets */; };
 		15C7EAAD2A3D78B30061D064 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C7EAAC2A3D78B30061D064 /* Preview Assets.xcassets */; };
 		15C7EAB72A3D78B30061D064 /* iOSMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAB62A3D78B30061D064 /* iOSMapTests.swift */; };
@@ -18,6 +17,7 @@
 		15C7EAD42A3D7BE70061D064 /* MapCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD32A3D7BE70061D064 /* MapCore.swift */; };
 		15C7EAD62A3D8A420061D064 /* UIMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD52A3D8A420061D064 /* UIMapView.swift */; };
 		15C7EAD92A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD82A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift */; };
+		15C7EADB2A3DBDEF0061D064 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EADA2A3DBDEF0061D064 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		15C7EAA22A3D78B30061D064 /* iOSMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C7EAA52A3D78B30061D064 /* iOSMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMapApp.swift; sourceTree = "<group>"; };
-		15C7EAA72A3D78B30061D064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		15C7EAA92A3D78B30061D064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15C7EAAC2A3D78B30061D064 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		15C7EAB22A3D78B30061D064 /* iOSMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +50,7 @@
 		15C7EAD32A3D7BE70061D064 /* MapCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCore.swift; sourceTree = "<group>"; };
 		15C7EAD52A3D8A420061D064 /* UIMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMapView.swift; sourceTree = "<group>"; };
 		15C7EAD82A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
+		15C7EADA2A3DBDEF0061D064 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,6 @@
 				15C7EAD72A3DB4960061D064 /* Extension */,
 				15C7EAD22A3D7BD90061D064 /* Map */,
 				15C7EAA52A3D78B30061D064 /* iOSMapApp.swift */,
-				15C7EAA72A3D78B30061D064 /* ContentView.swift */,
 				15C7EAA92A3D78B30061D064 /* Assets.xcassets */,
 				15C7EAAB2A3D78B30061D064 /* Preview Content */,
 			);
@@ -142,6 +141,7 @@
 			children = (
 				15C7EAD32A3D7BE70061D064 /* MapCore.swift */,
 				15C7EAD52A3D8A420061D064 /* UIMapView.swift */,
+				15C7EADA2A3DBDEF0061D064 /* MapView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15C7EAA82A3D78B30061D064 /* ContentView.swift in Sources */,
+				15C7EADB2A3DBDEF0061D064 /* MapView.swift in Sources */,
 				15C7EAD62A3D8A420061D064 /* UIMapView.swift in Sources */,
 				15C7EAD92A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				15C7EAA62A3D78B30061D064 /* iOSMapApp.swift in Sources */,
