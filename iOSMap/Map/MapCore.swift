@@ -5,10 +5,12 @@ import MapKit
 struct MapCore: ReducerProtocol {
     struct State: Equatable {
         var centerCoordinate: CLLocationCoordinate2D?
+        var tapAnotation: MKPointAnnotation?
     }
     
     enum Action: Equatable {
         case onAppear
+        case mapLongPress(coordinate: CLLocationCoordinate2D)
     }
     
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
@@ -21,6 +23,11 @@ struct MapCore: ReducerProtocol {
                     state.centerCoordinate = location.coordinate
                 }
             }
+            return .none
+        case let .mapLongPress(coordinate):
+            let tapAnotation = MKPointAnnotation()
+            tapAnotation.coordinate = coordinate
+            state.tapAnotation = tapAnotation
             return .none
         }
     }
