@@ -35,7 +35,6 @@ struct UIMapView: UIViewRepresentable {
 extension UIMapView {
     class Coordinator: NSObject {
         var parent: UIMapView
-        // TODO: もしかしたらいらない？
         var viewStore: ViewStore<MapCore.State, MapCore.Action>
         
         init(parent: UIMapView, viewStore: ViewStore<MapCore.State, MapCore.Action>) {
