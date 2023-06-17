@@ -1,22 +1,22 @@
-//
-//  ContentView.swift
-//  iOSMap
-//
-//  Created by 杉岡成哉 on 2023/06/17.
-//
 
 import SwiftUI
 import MapKit
+import ComposableArchitecture
 
 struct ContentView: View {
-    var body: some View {
-        UIMapView()
-            .edgesIgnoringSafeArea(.all)
+    let store: StoreOf<MapCore>
+    @ObservedObject var viewStore: ViewStore<MapCore.State, MapCore.Action>
+    
+    init(store: StoreOf<MapCore>) {
+        self.store = store
+        self.viewStore = ViewStore(store.scope(state: { $0 }, action: { $0 }))
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    var body: some View {
+        UIMapView(viewStore: viewStore)
+            .edgesIgnoringSafeArea(.all)
+            .onAppear {
+                viewStore.send(.onAppear)
+            }
     }
 }

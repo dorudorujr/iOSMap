@@ -17,6 +17,7 @@
 		15C7EAD12A3D7A760061D064 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 15C7EAD02A3D7A760061D064 /* ComposableArchitecture */; };
 		15C7EAD42A3D7BE70061D064 /* MapCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD32A3D7BE70061D064 /* MapCore.swift */; };
 		15C7EAD62A3D8A420061D064 /* UIMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD52A3D8A420061D064 /* UIMapView.swift */; };
+		15C7EAD92A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD82A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		15C7EAC22A3D78B30061D064 /* iOSMapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMapUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		15C7EAD32A3D7BE70061D064 /* MapCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCore.swift; sourceTree = "<group>"; };
 		15C7EAD52A3D8A420061D064 /* UIMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMapView.swift; sourceTree = "<group>"; };
+		15C7EAD82A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		15C7EAA42A3D78B30061D064 /* iOSMap */ = {
 			isa = PBXGroup;
 			children = (
+				15C7EAD72A3DB4960061D064 /* Extension */,
 				15C7EAD22A3D7BD90061D064 /* Map */,
 				15C7EAA52A3D78B30061D064 /* iOSMapApp.swift */,
 				15C7EAA72A3D78B30061D064 /* ContentView.swift */,
@@ -141,6 +144,14 @@
 				15C7EAD52A3D8A420061D064 /* UIMapView.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		15C7EAD72A3DB4960061D064 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				15C7EAD82A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 			files = (
 				15C7EAA82A3D78B30061D064 /* ContentView.swift in Sources */,
 				15C7EAD62A3D8A420061D064 /* UIMapView.swift in Sources */,
+				15C7EAD92A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				15C7EAA62A3D78B30061D064 /* iOSMapApp.swift in Sources */,
 				15C7EAD42A3D7BE70061D064 /* MapCore.swift in Sources */,
 			);
@@ -443,6 +455,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iOSMap/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"現在地を表示します\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -471,6 +484,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iOSMap/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"現在地を表示します\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -608,7 +622,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.9.0;
+				minimumVersion = 0.54.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
