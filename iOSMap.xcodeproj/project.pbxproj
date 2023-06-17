@@ -15,6 +15,8 @@
 		15C7EAC12A3D78B30061D064 /* iOSMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAC02A3D78B30061D064 /* iOSMapUITests.swift */; };
 		15C7EAC32A3D78B30061D064 /* iOSMapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAC22A3D78B30061D064 /* iOSMapUITestsLaunchTests.swift */; };
 		15C7EAD12A3D7A760061D064 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 15C7EAD02A3D7A760061D064 /* ComposableArchitecture */; };
+		15C7EAD42A3D7BE70061D064 /* MapCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD32A3D7BE70061D064 /* MapCore.swift */; };
+		15C7EAD62A3D8A420061D064 /* UIMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD52A3D8A420061D064 /* UIMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		15C7EABC2A3D78B30061D064 /* iOSMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C7EAC02A3D78B30061D064 /* iOSMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMapUITests.swift; sourceTree = "<group>"; };
 		15C7EAC22A3D78B30061D064 /* iOSMapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		15C7EAD32A3D7BE70061D064 /* MapCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCore.swift; sourceTree = "<group>"; };
+		15C7EAD52A3D8A420061D064 /* UIMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		15C7EAA42A3D78B30061D064 /* iOSMap */ = {
 			isa = PBXGroup;
 			children = (
+				15C7EAD22A3D7BD90061D064 /* Map */,
 				15C7EAA52A3D78B30061D064 /* iOSMapApp.swift */,
 				15C7EAA72A3D78B30061D064 /* ContentView.swift */,
 				15C7EAA92A3D78B30061D064 /* Assets.xcassets */,
@@ -127,6 +132,15 @@
 				15C7EAC22A3D78B30061D064 /* iOSMapUITestsLaunchTests.swift */,
 			);
 			path = iOSMapUITests;
+			sourceTree = "<group>";
+		};
+		15C7EAD22A3D7BD90061D064 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				15C7EAD32A3D7BE70061D064 /* MapCore.swift */,
+				15C7EAD52A3D8A420061D064 /* UIMapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				15C7EAA82A3D78B30061D064 /* ContentView.swift in Sources */,
+				15C7EAD62A3D8A420061D064 /* UIMapView.swift in Sources */,
 				15C7EAA62A3D78B30061D064 /* iOSMapApp.swift in Sources */,
+				15C7EAD42A3D7BE70061D064 /* MapCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
