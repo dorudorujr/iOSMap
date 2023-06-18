@@ -10,7 +10,7 @@ import SwiftUI
 struct DraggableView<Content: View>: View {
     @GestureState private var dragState = DragState.inactive
     @State private var position: CGFloat = 0
-    @State private var currentPositionState: PositionState = .small(70)
+    @State private var currentPositionState: PositionState = .small(0)
     let minHeight: CGFloat
     var content: () -> Content
     
