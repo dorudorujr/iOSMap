@@ -12,28 +12,16 @@ struct MapView: View {
     }
     
     var body: some View {
-        UIMapView(viewStore: viewStore)
-            .edgesIgnoringSafeArea(.all)
-            .onAppear {
-                viewStore.send(.onAppear)
-            }
-            .sheet(isPresented: .constant(true)) {
+        ZStack(alignment: .bottom) {
+            UIMapView(viewStore: viewStore)
+                .edgesIgnoringSafeArea(.all)
+                .onAppear {
+                    viewStore.send(.onAppear)
+                }
+            DraggableView(minHeight: 70) {
                 MenuView()
-                    .presentationDetents([.medium, .large, .height(70)])
-                    .interactiveDismissDisabled(true)
-                    .onAppear {
-                        guard let windows = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
-                            return
-                        }
-                        
-                        if let controller = windows.windows.first?.rootViewController?.presentedViewController,
-                           let sheet = controller.presentationController as? UISheetPresentationController {
-                            controller.presentingViewController?.view.tintAdjustmentMode = .normal
-                            sheet.largestUndimmedDetentIdentifier = .large
-                        } else {
-                            print("NO CONTROLLER FOUND")
-                        }
-                    }
             }
+            .edgesIgnoringSafeArea(.bottom)
+        }
     }
 }

@@ -9,16 +9,12 @@ import SwiftUI
 
 struct DraggableView<Content: View>: View {
     @GestureState private var dragState = DragState.inactive
-    @State var position = UIScreen.main.bounds.height * 0.7
+    @State private var position: CGFloat = 0
+    @State private var currentPositionState: PositionState = .small(70)
+    let minHeight: CGFloat
     var content: () -> Content
     
     var body: some View {
-        let drag = DragGesture()
-            .updating($dragState) { drag, state, transaction in
-                state = .dragging(translation: drag.translation.height)
-            }
-            .onEnded(onDragEnded)
-        
         GeometryReader { geometry in
             VStack {
                 Handle()
@@ -29,30 +25,51 @@ struct DraggableView<Content: View>: View {
             .cornerRadius(10)
             .offset(y: max(self.position + self.dragState.translation, 0))
             .animation(.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0), value: dragState)
-            .gesture(drag)
-        }
-    }
-    
-    private func onDragEnded(drag: DragGesture.Value) {
-        let verticalDirection = drag.predictedEndLocation.y - drag.location.y
-        let cardTopEdgeLocation = self.position + drag.translation.height
-        let positionAbove: CGFloat
-        let positionBelow: CGFloat
-        let closestPosition: CGFloat
-        
-        positionAbove = UIScreen.main.bounds.height * 0.3
-        positionBelow = UIScreen.main.bounds.height * 0.7
-        
-        if (cardTopEdgeLocation - positionAbove) < (positionBelow - cardTopEdgeLocation) {
-            closestPosition = positionAbove
-        } else {
-            closestPosition = positionBelow
-        }
-        
-        if verticalDirection > 0 {
-            self.position = positionBelow
-        } else {
-            self.position = positionAbove
+            .gesture(
+                DragGesture()
+                    // .updating: gestureの値が変更されると指定されたGestureStateの値を更新する
+                    .updating(self.$dragState) { drag, state, transaction in
+                        state = .dragging(translation: drag.translation.height)
+                    }
+                    // .onEnded: gestureが終わった時
+                    .onEnded { drag in
+                        // location: 現在のドラッグ位置
+                        // predictedEndLocation: ドラッグが終了したと予測される位置
+                        let verticalDirection = drag.predictedEndLocation.y - drag.location.y
+                        
+                        // 上スワイプか下スワイプかどうか
+                        if verticalDirection > 0 {
+                            // 下スワイプ
+                            switch self.currentPositionState {
+                            case .large:
+                                self.position = PositionState.medium.height(viewHeight: geometry.size.height)
+                                self.currentPositionState = PositionState.medium
+                            case .medium:
+                                self.position = PositionState.small(minHeight).height(viewHeight: geometry.size.height)
+                                self.currentPositionState = PositionState.small(minHeight)
+                            case .small:
+                                self.position = PositionState.small(minHeight).height(viewHeight: geometry.size.height)
+                                self.currentPositionState = PositionState.small(minHeight)
+                            }
+                        } else {
+                            // 上スワイプ
+                            switch self.currentPositionState {
+                            case .large:
+                                self.position = PositionState.large.height(viewHeight: geometry.size.height)
+                                self.currentPositionState = PositionState.large
+                            case .medium:
+                                self.position = PositionState.large.height(viewHeight: geometry.size.height)
+                                self.currentPositionState = PositionState.large
+                            case .small:
+                                self.position = PositionState.medium.height(viewHeight: geometry.size.height)
+                                self.currentPositionState = PositionState.medium
+                            }
+                        }
+                    }
+            )
+            .onAppear {
+                self.position = geometry.size.height - minHeight
+            }
         }
     }
     
@@ -68,13 +85,21 @@ struct DraggableView<Content: View>: View {
                 return translation
             }
         }
-
-        var isActive: Bool {
+    }
+    
+    enum PositionState {
+        case large
+        case medium
+        case small(CGFloat)
+        
+        func height(viewHeight: CGFloat) -> CGFloat {
             switch self {
-            case .inactive:
-                return false
-            case .dragging:
-                return true
+            case .large:
+                return 0
+            case .medium:
+                return viewHeight * 0.5
+            case .small(let height):
+                return viewHeight - height
             }
         }
     }
