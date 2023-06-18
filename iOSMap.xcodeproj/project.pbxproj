@@ -18,6 +18,7 @@
 		15C7EAD62A3D8A420061D064 /* UIMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD52A3D8A420061D064 /* UIMapView.swift */; };
 		15C7EAD92A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EAD82A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift */; };
 		15C7EADB2A3DBDEF0061D064 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EADA2A3DBDEF0061D064 /* MapView.swift */; };
+		15C7EADE2A3DFB5F0061D064 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7EADD2A3DFB5F0061D064 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		15C7EAD52A3D8A420061D064 /* UIMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMapView.swift; sourceTree = "<group>"; };
 		15C7EAD82A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 		15C7EADA2A3DBDEF0061D064 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		15C7EADD2A3DFB5F0061D064 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		15C7EAA42A3D78B30061D064 /* iOSMap */ = {
 			isa = PBXGroup;
 			children = (
+				15C7EADC2A3DFB470061D064 /* Menu */,
 				15C7EAD72A3DB4960061D064 /* Extension */,
 				15C7EAD22A3D7BD90061D064 /* Map */,
 				15C7EAA52A3D78B30061D064 /* iOSMapApp.swift */,
@@ -152,6 +155,14 @@
 				15C7EAD82A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		15C7EADC2A3DFB470061D064 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				15C7EADD2A3DFB5F0061D064 /* MenuView.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15C7EADB2A3DBDEF0061D064 /* MapView.swift in Sources */,
+				15C7EADE2A3DFB5F0061D064 /* MenuView.swift in Sources */,
 				15C7EAD62A3D8A420061D064 /* UIMapView.swift in Sources */,
 				15C7EAD92A3DB4B60061D064 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				15C7EAA62A3D78B30061D064 /* iOSMapApp.swift in Sources */,
