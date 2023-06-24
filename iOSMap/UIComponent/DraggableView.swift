@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 上下にスワイプできるView
 struct DraggableView<Content: View>: View {
     @GestureState private var dragState = DragState.inactive
     @State private var position: CGFloat = 0
