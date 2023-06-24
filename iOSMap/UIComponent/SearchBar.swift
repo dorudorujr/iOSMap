@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SearchBar: View {
+    static let height = 36
     @Binding var text: String
     
     var body: some View {
@@ -11,7 +12,7 @@ struct SearchBar: View {
                     .fill(Color(red: 239 / 255,
                                 green: 239 / 255,
                                 blue: 241 / 255))
-                    .frame(height: 36)
+                    .frame(height: Self.height)
                 
                 HStack(spacing: 6) {
                     Spacer()

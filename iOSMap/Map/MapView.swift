@@ -19,7 +19,7 @@ struct MapView: View {
                     viewStore.send(.onAppear)
                 }
             DraggableView(minHeight: 70) {
-                MenuView()
+                MenuView(store: self.store.scope(state: \.menu, action: MapCore.Action.menu))
             }
             .edgesIgnoringSafeArea(.bottom)
         }
