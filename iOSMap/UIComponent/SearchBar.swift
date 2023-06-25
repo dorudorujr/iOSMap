@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SearchBar: View {
-    static let height = 36
+    static let height: CGFloat = 36
     @Binding var text: String
     
     var body: some View {

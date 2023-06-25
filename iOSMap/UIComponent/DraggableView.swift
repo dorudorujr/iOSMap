@@ -107,10 +107,13 @@ struct DraggableView<Content: View>: View {
 }
 
 struct Handle: View {
+    private static let height: CGFloat = 5
+    static let totalHeight: CGFloat = height + 12
+    
     var body: some View {
         Rectangle()
             .fill(Color.secondary)
-            .frame(width: 60, height: 5)
+            .frame(width: 60, height: Self.height)
             .cornerRadius(3.0)
             .padding(EdgeInsets(top: 8, leading: 0, bottom: 4, trailing: 0))
     }

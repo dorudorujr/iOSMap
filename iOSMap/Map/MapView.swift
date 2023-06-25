@@ -12,16 +12,18 @@ struct MapView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            UIMapView(viewStore: viewStore)
-                .edgesIgnoringSafeArea(.all)
-                .onAppear {
-                    viewStore.send(.onAppear)
+        GeometryReader { geometry in
+            ZStack(alignment: .bottom) {
+                UIMapView(viewStore: viewStore)
+                    .edgesIgnoringSafeArea(.all)
+                    .onAppear {
+                        viewStore.send(.onAppear)
+                    }
+                DraggableView(minHeight: geometry.safeAreaInsets.bottom + SearchBar.height + Handle.totalHeight) {
+                    MenuView(store: self.store.scope(state: \.menu, action: MapCore.Action.menu))
                 }
-            DraggableView(minHeight: 70) {
-                MenuView(store: self.store.scope(state: \.menu, action: MapCore.Action.menu))
+                .edgesIgnoringSafeArea(.bottom)
             }
-            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }
