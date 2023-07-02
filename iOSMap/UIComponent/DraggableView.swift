@@ -22,7 +22,7 @@ struct DraggableView<Content: View>: View {
                 content()
             }
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
-            .background(Color.white)
+            .background(.ultraThickMaterial)
             .cornerRadius(10)
             .offset(y: max(self.position + self.dragState.translation, 0))
             .animation(.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0), value: dragState)

@@ -48,7 +48,7 @@ struct MenuView: View {
                             .frame(width: geometry.size.width - 60)
                             .padding()
                             .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
-                            .shadow(color: Color.black.opacity(0.2), radius: 1, x: 0, y: 1)
+                            .shadow(color: Color.black.opacity(0.1), radius: 0.5, x: 0, y: 0)
                             .padding(.vertical, 5)
                             .padding(.horizontal)
                         }
